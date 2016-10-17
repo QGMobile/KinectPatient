@@ -1,6 +1,6 @@
 # KinectPatient
 
-## License
+## Copyright
 
 Copyright (C) 2016 QG Studio
 
