@@ -41,6 +41,7 @@ public class ChatContactListAdapter extends ItemAdapter<ChatInfoBean, ChatContac
 
     public class ChatInfoHolder extends ItemViewHolder<ChatInfoBean>{
         private TextView nameTv;
+        private TextView careerTv;
         private TextView unReadTv;
 
         public ChatInfoHolder(View itemView) {
@@ -51,13 +52,20 @@ public class ChatContactListAdapter extends ItemAdapter<ChatInfoBean, ChatContac
         @Override
         public void initChilds(View itemView) {
             nameTv = (TextView) itemView.findViewById(R.id.name_tv);
+            careerTv = (TextView) itemView.findViewById(R.id.career_tv);
             unReadTv = (TextView)itemView.findViewById(R.id.unread_tv);
         }
 
         @Override
         public void bindElement(ChatInfoBean bean) {
             DUser dUser = bean.getDUser();
+            String name = dUser.getName();
             nameTv.setText(dUser.getName());
+
+            String department = dUser.getDepartment();
+            String jobTitle = dUser.getJobTitle();
+            careerTv.setText(department + ","+ jobTitle);
+
             String username = bean.getIMUsername();
             int unReadCount = IMManager.getInstance(context).getUnreadMsgCount(username);
             Log.e(TAG, "unReadCount->"+unReadCount);

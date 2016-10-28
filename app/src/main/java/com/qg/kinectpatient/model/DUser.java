@@ -1,9 +1,11 @@
 package com.qg.kinectpatient.model;
 
+import java.io.Serializable;
+
 /**
  * Created by ZH_L on 2016/10/22.
  */
-public class DUser {
+public class DUser implements Serializable{
     private int id;
     private String name;
     private int sex;

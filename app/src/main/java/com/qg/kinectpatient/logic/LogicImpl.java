@@ -4,7 +4,9 @@ import android.os.AsyncTask;
 
 
 import com.qg.kinectpatient.http.HttpProcess;
+import com.qg.kinectpatient.param.GetDUserByPhoneParam;
 import com.qg.kinectpatient.param.Param;
+import com.qg.kinectpatient.result.GetDUserByPhoneResult;
 import com.qg.kinectpatient.result.Result;
 import com.qg.kinectpatient.util.CommandUtil;
 
@@ -51,6 +53,10 @@ public class LogicImpl implements Logic{
         task.executeOnExecutor(exec);
     }
 
+    @Override
+    public void getDUserByPhone(GetDUserByPhoneParam param, LogicHandler<GetDUserByPhoneResult> handler) {
+        getResult(param, handler, GetDUserByPhoneResult.class);
+    }
 
 
     private abstract class GetResultTask<R extends Result> extends AsyncTask<Void,Void,R>{

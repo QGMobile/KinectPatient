@@ -4,6 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="70dp">
 
+
+    <ImageView
+        android:id="@+id/headicon_iv"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/doctor"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="30dp" />
+
     <TextView
         android:id="@+id/unread_tv"
         android:layout_width="30dp"
@@ -16,14 +25,34 @@
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:layout_marginRight="25dp"/>
-    <TextView
-        android:id="@+id/name_tv"
+
+    <LinearLayout
+        android:layout_toRightOf="@id/headicon_iv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        tools:text="病人姓名"
-        android:textSize="18dp"
-        android:layout_toLeftOf="@id/unread_tv"
+        android:orientation="vertical"
         android:paddingLeft="25dp"
-        android:paddingRight="25dp"/>
+        android:paddingRight="25dp"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/unread_tv">
+
+        <TextView
+            android:id="@+id/name_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="医生姓名"
+            android:textSize="18dp"
+            android:textColor="@color/color_black"
+            android:layout_marginBottom="5dp"/>
+        <TextView
+            android:id="@+id/career_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            tools:text="职称，诊室"
+            />
+    </LinearLayout>
+
+
+
 </RelativeLayout>

@@ -63,9 +63,9 @@ public class ChatListFragment extends BaseFragment implements ChatContactListAda
             initRecyclerView();
             initEM();
             initReceiver();
-            getDataFromServer();
+//            getDataFromServer();
 
-//            loginEM();
+            loginEM();
         }
         return v;
     }
@@ -147,11 +147,11 @@ public class ChatListFragment extends BaseFragment implements ChatContactListAda
                                         }else{
                                             ToastUtil.showResultErrorToast(result);
                                         }
-//
-//                                        PUser pUser = new PUser(18, "测试", 1, "12345678901", "", "1995-05-16");
-//                                        ChatInfoBean cb = new ChatInfoBean(pUser);
-//                                        mList.add(cb);
-//                                        mAdapter.notifyDataSetChanged();
+
+                                        DUser dUser = new DUser("测试",1, 18,"12345678901","","广东省中医院","皮肤科","老司机");
+                                        ChatInfoBean cb = new ChatInfoBean(dUser);
+                                        mList.add(cb);
+                                        mAdapter.notifyDataSetChanged();
                                     }
                                 }
                             });
