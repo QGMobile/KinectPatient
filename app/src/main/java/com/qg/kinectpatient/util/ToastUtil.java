@@ -4,8 +4,9 @@ import android.content.Context;
 import android.support.annotation.StringRes;
 import android.widget.Toast;
 
-import com.qg.kinectdoctor.activity.App;
-import com.qg.kinectdoctor.result.Result;
+import com.qg.kinectpatient.activity.App;
+import com.qg.kinectpatient.result.Result;
+
 
 /**
  * Created by ZH_L on 2016/10/22.
