@@ -84,7 +84,7 @@ public class ChatListFragment extends BaseFragment implements ChatContactListAda
     }
 
     private void loginEM(){
-        String phone = "13549991585";
+        String phone = "12345678901";
         IMManager.getInstance(getActivity()).login(phone, new LoginCallback() {
             @Override
             public void onSuccess() {
@@ -125,6 +125,7 @@ public class ChatListFragment extends BaseFragment implements ChatContactListAda
                         @Override
                         public void run() {
                             final List<String> phones = IMFilter.filterToPhones(usernames);
+                            Log.e(TAG, "friendlist->"+phones.toString());
                             GetDUserByPhoneParam param = new GetDUserByPhoneParam(phones);
                             LogicImpl.getInstance().getDUserByPhone(param, new LogicHandler<GetDUserByPhoneResult>() {
                                 @Override
@@ -148,7 +149,7 @@ public class ChatListFragment extends BaseFragment implements ChatContactListAda
                                             ToastUtil.showResultErrorToast(result);
                                         }
 
-                                        DUser dUser = new DUser("测试",1, 18,"12345678901","","广东省中医院","皮肤科","老司机");
+                                        DUser dUser = new DUser("测试",1, 18,"13549991585","","广东省中医院","皮肤科","老司机");
                                         ChatInfoBean cb = new ChatInfoBean(dUser);
                                         mList.add(cb);
                                         mAdapter.notifyDataSetChanged();

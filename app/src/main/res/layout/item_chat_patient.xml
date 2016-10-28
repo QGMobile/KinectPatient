@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/item_chat_patient"
     android:layout_width="match_parent"
-    android:layout_height="80dp">
+    android:layout_height="80dp"
+    android:visibility="gone">
 
     <Button
         android:id="@+id/patient_voice_btn"

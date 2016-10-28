@@ -62,9 +62,10 @@ public class ChatContactListAdapter extends ItemAdapter<ChatInfoBean, ChatContac
             String name = dUser.getName();
             nameTv.setText(dUser.getName());
 
+            String hospital = dUser.getHospital();
             String department = dUser.getDepartment();
-            String jobTitle = dUser.getJobTitle();
-            careerTv.setText(department + ","+ jobTitle);
+//            String jobTitle = dUser.getJobTitle();
+            careerTv.setText(hospital + ","+ department);
 
             String username = bean.getIMUsername();
             int unReadCount = IMManager.getInstance(context).getUnreadMsgCount(username);
