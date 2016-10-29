@@ -8,4 +8,14 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+
+    <style name="ToolbarRightText">
+        <item name="android:layout_gravity">end|center_vertical</item>
+        <item name="android:clickable">true</item>
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:padding">16.5dp</item>
+    </style>
+
 </resources>

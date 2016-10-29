@@ -38,7 +38,7 @@ public class VoiceBean {
 //        this.time = time;
 //    }
 
-//    public DUser getdUser() {
+//    public DUser getPUser() {
 //        return dUser;
 //    }
 

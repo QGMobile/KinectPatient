@@ -5,8 +5,10 @@ import android.os.AsyncTask;
 
 import com.qg.kinectpatient.http.HttpProcess;
 import com.qg.kinectpatient.param.GetDUserByPhoneParam;
+import com.qg.kinectpatient.param.LoginParam;
 import com.qg.kinectpatient.param.Param;
 import com.qg.kinectpatient.result.GetDUserByPhoneResult;
+import com.qg.kinectpatient.result.LoginResult;
 import com.qg.kinectpatient.result.Result;
 import com.qg.kinectpatient.util.CommandUtil;
 
@@ -56,6 +58,11 @@ public class LogicImpl implements Logic{
     @Override
     public void getDUserByPhone(GetDUserByPhoneParam param, LogicHandler<GetDUserByPhoneResult> handler) {
         getResult(param, handler, GetDUserByPhoneResult.class);
+    }
+
+    @Override
+    public void login(LoginParam param, LogicHandler<LoginResult> handler) {
+        getResult(param, handler, LoginResult.class);
     }
 
 
