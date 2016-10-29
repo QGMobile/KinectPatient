@@ -61,9 +61,9 @@ public class ChatListFragment extends BaseFragment implements ChatContactListAda
             mRecyclerView = (RecyclerView)v.findViewById(R.id.recyclerview);
             initTopbar();
             initRecyclerView();
-            initEM();
+//            initEM();
             initReceiver();
-//            getDataFromServer();
+            getDataFromServer();
 
             loginEM();
         }
@@ -148,11 +148,11 @@ public class ChatListFragment extends BaseFragment implements ChatContactListAda
                                         }else{
                                             ToastUtil.showResultErrorToast(result);
                                         }
-
-                                        DUser dUser = new DUser("测试",1, 18,"13549991585","","广东省中医院","皮肤科","老司机");
-                                        ChatInfoBean cb = new ChatInfoBean(dUser);
-                                        mList.add(cb);
-                                        mAdapter.notifyDataSetChanged();
+//
+//                                        DUser dUser = new DUser("测试",1, 18,"13549991585","","广东省中医院","皮肤科","老司机");
+//                                        ChatInfoBean cb = new ChatInfoBean(dUser);
+//                                        mList.add(cb);
+//                                        mAdapter.notifyDataSetChanged();
                                     }
                                 }
                             });
