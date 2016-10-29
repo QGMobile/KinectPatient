@@ -53,7 +53,7 @@ public class IMManager {
      * @param callback
      */
     public void login(final String phone, final LoginCallback callback){
-        EMClient.getInstance().login(EMConstants.DOCTOR_USERNAME_PREFIX + phone, EMConstants.LOGIN_PASSWORD, new EMCallBack() {
+        EMClient.getInstance().login(EMConstants.PATIENT_USERNAME_PREFIX + phone, EMConstants.LOGIN_PASSWORD, new EMCallBack() {
             @Override
             public void onSuccess() {
                 EMClient.getInstance().groupManager().loadAllGroups();
