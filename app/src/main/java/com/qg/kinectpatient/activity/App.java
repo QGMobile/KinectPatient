@@ -5,6 +5,8 @@ import android.app.Application;
 import android.content.pm.PackageManager;
 import android.util.Log;
 
+import com.qg.kinectpatient.model.PUser;
+
 import java.util.Iterator;
 import java.util.List;
 
@@ -15,6 +17,7 @@ public class App extends Application {
 
     private static App instance = null;
     private static final String TAG = App.class.getSimpleName();
+    private PUser user = null;
 
     @Override
     public void onCreate() {
@@ -61,5 +64,13 @@ public class App extends Application {
 
     public static App getInstance() {
         return instance;
+    }
+
+    public synchronized PUser getUser() {
+        return user;
+    }
+
+    public synchronized void setUser(PUser user) {
+        this.user = user;
     }
 }
