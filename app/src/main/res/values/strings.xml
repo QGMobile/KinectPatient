@@ -29,6 +29,15 @@
     <string name="name">名字</string>
     <string name="age">年龄</string>
     <string name="sex">性别</string>
+
     <!-- Create by tzh. END.-->
+
+    <string name="see_time">诊断时间</string>
+    <string name="medical_condition">病况</string>
+    <string name="rc_plan">康复计划</string>
+    <string name="detail">详细信息</string>
+    <string name="rehabilitation_programmes">康复方案</string>
+    <string name="getRCfail">获取康复方案失败，请稍后重试！</string>
+    <string name="getMRfail">获取病历失败，请稍后再试！</string>
 
 </resources>
