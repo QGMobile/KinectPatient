@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 
@@ -11,7 +12,15 @@ import com.qg.kinectpatient.R;
 import com.qg.kinectpatient.fragment.ChatListFragment;
 import com.qg.kinectpatient.fragment.DoctorFragment;
 import com.qg.kinectpatient.fragment.ProfileFragment;
+import com.qg.kinectpatient.logic.LogicHandler;
+import com.qg.kinectpatient.logic.LogicImpl;
+import com.qg.kinectpatient.model.PUser;
+import com.qg.kinectpatient.param.UpdatePUserParam;
+import com.qg.kinectpatient.result.UpdatePUserResult;
 import com.qg.kinectpatient.ui.information.PersonalInfoFragment;
+import com.qg.kinectpatient.util.ToastUtil;
+
+import java.util.Date;
 
 /**
  * Created by 攀登者 on 2016/10/28.
@@ -36,6 +45,26 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
         setTabSelection(1);
         setTabSelection(2);
         setTabSelection(0);
+        updateTest();
+    }
+
+    private void updateTest(){
+        Log.e(TAG, "updateTest");
+        PUser pUser = new PUser(18, "煌", 1, "12345678901", "123456", new Date(System.currentTimeMillis()));
+        UpdatePUserParam param = new UpdatePUserParam(pUser);
+        LogicImpl.getInstance().updatePUser(param, new LogicHandler<UpdatePUserResult>() {
+            @Override
+            public void onResult(UpdatePUserResult result, boolean onUIThread) {
+                if(onUIThread){
+                    if(result.isOk()){
+                        Log.e(TAG, "updatePUser success");
+                    }else{
+                        Log.e(TAG, "updatePUser fail");
+                        ToastUtil.showResultErrorToast(result);
+                    }
+                }
+            }
+        });
     }
 
     private void initViews() {
@@ -54,6 +83,7 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
     protected void onSaveInstanceState(Bundle outState) {
         // super.onSaveInstanceState(outState);
     }
+
 
     @Override
     public void onClick(View v) {

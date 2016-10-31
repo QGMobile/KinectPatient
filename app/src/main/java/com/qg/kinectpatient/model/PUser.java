@@ -1,6 +1,7 @@
 package com.qg.kinectpatient.model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Created by ZH_L on 2016/10/22.
