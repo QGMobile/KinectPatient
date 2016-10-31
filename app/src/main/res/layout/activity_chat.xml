@@ -6,7 +6,7 @@
     <com.qg.kinectpatient.view.TopbarL
         android:id="@+id/chat_topbar"
         android:layout_width="match_parent"
-        android:layout_height="60dp">
+        android:layout_height="56dp">
     </com.qg.kinectpatient.view.TopbarL>
     <Button
         android:id="@+id/chat_record_btn"

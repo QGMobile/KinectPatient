@@ -5,4 +5,10 @@
     <color name="colorAccent">#FF4081</color>
     <color name="base_color">#7ED4BC</color>
     <color name="topbarBaseColor">#7FB4BD</color>
+    <color name="white">#FFFFFF</color>
+    <color name="add_color">#526ABD</color>
+    <color name="home_record">#3D597E</color>
+    <color name="fuwen">#B1B1B1</color>
+    <color name="zhengwen">#404040</color>
+
 </resources>

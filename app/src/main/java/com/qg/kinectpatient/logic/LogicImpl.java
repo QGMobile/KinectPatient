@@ -5,10 +5,14 @@ import android.os.AsyncTask;
 
 import com.qg.kinectpatient.http.HttpProcess;
 import com.qg.kinectpatient.param.GetDUserByPhoneParam;
+import com.qg.kinectpatient.param.GetMRParam;
+import com.qg.kinectpatient.param.GetRcStageParam;
 import com.qg.kinectpatient.param.LoginParam;
 import com.qg.kinectpatient.param.Param;
 import com.qg.kinectpatient.param.UpdatePUserParam;
 import com.qg.kinectpatient.result.GetDUserByPhoneResult;
+import com.qg.kinectpatient.result.GetMRResult;
+import com.qg.kinectpatient.result.GetRcStageResult;
 import com.qg.kinectpatient.result.LoginResult;
 import com.qg.kinectpatient.result.Result;
 import com.qg.kinectpatient.result.UpdatePUserResult;
@@ -71,6 +75,16 @@ public class LogicImpl implements Logic{
     public void updatePUser(UpdatePUserParam param, LogicHandler<UpdatePUserResult> handler) {
         getResult(param, handler, UpdatePUserResult.class);
     }
+    @Override
+    public void getMR(GetMRParam param, LogicHandler<GetMRResult> handler) {
+        getResult(param, handler, GetMRResult.class);
+    }
+
+    @Override
+    public void getRcStage(GetRcStageParam param, LogicHandler<GetRcStageResult> handler) {
+        getResult(param, handler, GetRcStageResult.class);
+    }
+
 
     private abstract class GetResultTask<R extends Result> extends AsyncTask<Void,Void,R>{
 
