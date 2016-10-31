@@ -13,11 +13,11 @@ public class PUser implements Serializable{
     private  int sex;
     private String phone;
     private String password;
-    private String birth;
+    private Date birth;
 
     public PUser(){};
 
-    public PUser(int age, String name, int sex, String phone, String password, String birth) {
+    public PUser(int age, String name, int sex, String phone, String password, Date birth) {
         this.age = age;
         this.name = name;
         this.sex = sex;
@@ -74,11 +74,11 @@ public class PUser implements Serializable{
         this.password = password;
     }
 
-    public String getBirth() {
+    public Date getBirth() {
         return birth;
     }
 
-    public void setBirth(String birth) {
+    public void setBirth(Date birth) {
         this.birth = birth;
     }
 }

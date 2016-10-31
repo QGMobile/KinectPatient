@@ -29,7 +29,7 @@ public class PersonalInfoFragment extends BaseFragment implements PersonalInfoCo
     private TextView mInfo;
 
     public static PersonalInfoFragment newInstanceWithPresenter() {
-        int patientId = App.getInstance().getUser().getId();
+        int patientId = 0;
         PersonalInfoFragment fragment = newInstance(patientId);
         new PersonalInfoPresenter(patientId, fragment);
         return fragment;

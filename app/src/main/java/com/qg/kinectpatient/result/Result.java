@@ -10,7 +10,7 @@ public class Result {
     public String errMsg = "";
 
     public boolean isOk() {
-        return status != 0;
+        return status == 1;
     }
 
     public String getErrMsg() {
