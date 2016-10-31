@@ -11,6 +11,7 @@ import com.qg.kinectpatient.R;
 import com.qg.kinectpatient.fragment.BaseFragment;
 import com.qg.kinectpatient.util.NumberUtil;
 import com.qg.kinectpatient.util.ToastUtil;
+import com.qg.kinectpatient.view.AgeSexChooseDialogBuilder;
 import com.qg.kinectpatient.view.ToolbarT;
 
 import static com.qg.kinectpatient.util.Preconditions.checkNotNull;
@@ -20,7 +21,7 @@ import static java.security.AccessController.getContext;
 /**
  * Created by TZH on 2016/10/29.
  */
-public class BaseInfoFragment extends BaseFragment implements BaseInfoContract.View {
+public class BaseInfoFragment extends BaseFragment implements BaseInfoContract.View, AgeSexChooseDialogBuilder.OnSelectListener {
 
     private BaseInfoContract.Presenter mPresenter;
 
@@ -60,7 +61,7 @@ public class BaseInfoFragment extends BaseFragment implements BaseInfoContract.V
         mAge.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                showEditAge(Integer.valueOf(mAgeText.getText().toString()));
             }
         });
 
@@ -68,7 +69,7 @@ public class BaseInfoFragment extends BaseFragment implements BaseInfoContract.V
         mSex.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                showEditSex();
             }
         });
 
@@ -79,7 +80,7 @@ public class BaseInfoFragment extends BaseFragment implements BaseInfoContract.V
             @Override
             public void onClick(View v) {
                 mPresenter.saveBaseInfo(
-                        mNameText. getText().toString(),
+                        mNameText.getText().toString(),
                         NumberUtil.parseInt(mAgeText.getText().toString(), 0),
                         mSexText.getText().toString()
                 );
@@ -110,12 +111,16 @@ public class BaseInfoFragment extends BaseFragment implements BaseInfoContract.V
         ToastUtil.showToast(getContext(), error);
     }
 
+    private AgeSexChooseDialogBuilder mBuilder;
+
     @Override
     public void showEditAge(int age) {
+        mBuilder.showAgeDialog();
     }
 
     @Override
     public void showEditSex() {
+        mBuilder.showSexDialog();
     }
 
     @Override
@@ -125,7 +130,32 @@ public class BaseInfoFragment extends BaseFragment implements BaseInfoContract.V
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        mPresenter.start();
+        mBuilder = new AgeSexChooseDialogBuilder(getContext());
+        mBuilder.setOnSelectListener(this);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        mBuilder.uninstall();
+        mBuilder = null;
+    }
+
+    @Override
     public boolean isActive() {
         return isAdded();
+    }
+
+    @Override
+    public void selectSex(String sex) {
+        mSexText.setText(sex);
+    }
+
+    @Override
+    public void selectAge(int age) {
+        mAgeText.setText(String.valueOf(age));
     }
 }

@@ -7,14 +7,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <com.qg.kinectdoctor.view.ToolbarT
+    <com.qg.kinectpatient.view.ToolbarT
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/tool_bar_size"
         android:background="@drawable/colorful_topbar_bg"
         app:title="@string/my_info"
         app:titleTextColor="@android:color/white">
-    </com.qg.kinectdoctor.view.ToolbarT>
+    </com.qg.kinectpatient.view.ToolbarT>
 
     <TextView
         android:id="@+id/name"
