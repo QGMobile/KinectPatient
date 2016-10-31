@@ -105,6 +105,9 @@ public class ChatActivity extends BaseActivity implements EMMessageListener, Cha
             @Override
             public void onClick(View view) {
                 //jump to where
+                Intent intent = new Intent(ChatActivity.this, DoctorInfoActivity.class);
+                intent.putExtra(EMConstants.EXTRA_DUSER, curChatingBean.getDUser());
+                startActivity(intent);
             }
         });
 

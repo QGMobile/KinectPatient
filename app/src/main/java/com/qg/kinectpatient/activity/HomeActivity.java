@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import com.qg.kinectpatient.R;
+import com.qg.kinectpatient.fragment.ChatListFragment;
 import com.qg.kinectpatient.fragment.DoctorFragment;
 import com.qg.kinectpatient.fragment.ProfileFragment;
 import com.qg.kinectpatient.fragment.MeFragment;
@@ -19,7 +20,7 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
 
     private static final String TAG = "HomeActivity";
     private ProfileFragment mProfileFragment;
-    private DoctorFragment mDoctorFragment;
+    private ChatListFragment mDoctorFragment;
     private MeFragment mMeFragment;
 
     private ImageButton profile, doctor, me;
@@ -93,7 +94,7 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
             case 1:
                 doctor.setImageResource(R.drawable.doctor_click);
                 if (mDoctorFragment == null) {
-                    mDoctorFragment = new DoctorFragment();
+                    mDoctorFragment = new ChatListFragment();
                     transaction.add(R.id.fragmentlayout, mDoctorFragment);
                 } else {
                     transaction.show(mDoctorFragment);
