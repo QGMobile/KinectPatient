@@ -17,4 +17,16 @@ public class LoginResult extends Result{
         return pUser;
     }
 
+    @Override
+    protected String otherErrMsg() {
+        switch (status) {
+            case 0:
+                return "密码错误";
+            case 2:
+                return "用户不存在";
+            default:
+                return super.otherErrMsg();
+        }
+    }
+
 }
