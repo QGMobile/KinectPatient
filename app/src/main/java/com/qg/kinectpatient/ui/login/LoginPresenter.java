@@ -10,6 +10,7 @@ import com.qg.kinectpatient.model.PUser;
 import com.qg.kinectpatient.param.LoginParam;
 import com.qg.kinectpatient.result.LoginResult;
 import com.qg.kinectpatient.util.FormatChecker;
+import com.qg.kinectpatient.util.JsonUtil;
 
 import static com.qg.kinectpatient.util.Preconditions.checkNotNull;
 
@@ -55,6 +56,10 @@ public class LoginPresenter implements LoginContract.Presenter {
                 }
                 // OK
                 final PUser pUser = result.getPUser();
+                android.util.
+                        Log.d("Test", "onResult: " + JsonUtil.toJson(result));
+                android.util.
+                Log.d("Test", "onResult: " + JsonUtil.toJson(pUser));
                 IMManager.getInstance(App.getInstance()).login(phone, new LoginCallback() {
                     @Override
                     public void onSuccess() {
