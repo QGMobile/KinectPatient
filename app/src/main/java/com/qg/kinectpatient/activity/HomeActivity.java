@@ -11,7 +11,7 @@ import com.qg.kinectpatient.R;
 import com.qg.kinectpatient.fragment.ChatListFragment;
 import com.qg.kinectpatient.fragment.DoctorFragment;
 import com.qg.kinectpatient.fragment.ProfileFragment;
-import com.qg.kinectpatient.fragment.MeFragment;
+import com.qg.kinectpatient.ui.information.PersonalInfoFragment;
 
 /**
  * Created by 攀登者 on 2016/10/28.
@@ -21,7 +21,7 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
     private static final String TAG = "HomeActivity";
     private ProfileFragment mProfileFragment;
     private ChatListFragment mDoctorFragment;
-    private MeFragment mMeFragment;
+    private PersonalInfoFragment mPersonalInfoFragment;
 
     private ImageButton profile, doctor, me;
 
@@ -102,11 +102,11 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
                 break;
             case 2:
                 me.setImageResource(R.drawable.me_click);
-                if (mMeFragment == null) {
-                    mMeFragment = new MeFragment();
-                    transaction.add(R.id.fragmentlayout, mMeFragment);
+                if (mPersonalInfoFragment == null) {
+                    mPersonalInfoFragment = PersonalInfoFragment.newInstanceWithPresenter();
+                    transaction.add(R.id.fragmentlayout, mPersonalInfoFragment);
                 } else {
-                    transaction.show(mMeFragment);
+                    transaction.show(mPersonalInfoFragment);
                 }
                 break;
             default:
@@ -137,8 +137,8 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
         if (mDoctorFragment != null) {
             transaction.hide(mDoctorFragment);
         }
-        if (mMeFragment != null) {
-            transaction.hide(mMeFragment);
+        if (mPersonalInfoFragment != null) {
+            transaction.hide(mPersonalInfoFragment);
         }
     }
 
