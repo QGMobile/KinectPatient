@@ -46,8 +46,8 @@
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/doctor_info_recyclerview"
-        android:layout_below="@id/doctor_info_topbar"
-        android:layout_above="@id/relative_layout"
+        android:layout_below="@id/relative_layout"
+        android:layout_above="@id/delete_btn"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     </android.support.v7.widget.RecyclerView>
