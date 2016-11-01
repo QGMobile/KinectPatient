@@ -29,7 +29,11 @@
     <string name="name">名字</string>
     <string name="age">年龄</string>
     <string name="sex">性别</string>
-
+    <string name="male">男</string>
+    <string name="female">女</string>
+    <string name="choose_sex">选择性别</string>
+    <string name="cancle">取消</string>
+    <string name="sure">确定</string>
     <!-- Create by tzh. END.-->
 
     <string name="see_time">诊断时间</string>
