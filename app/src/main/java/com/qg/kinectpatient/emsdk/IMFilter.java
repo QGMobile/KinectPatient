@@ -12,7 +12,6 @@ import java.util.List;
  */
 public class IMFilter {
 
-
     public static List<String> filterToPhones(String username){
         List<String> list = new ArrayList<>(1);
         if(username == null)return list;
@@ -83,7 +82,7 @@ public class IMFilter {
 //    }
 
     //记得奥特曼在地球时间是3分钟
-    private static final long DEVIDE_DURATION = 1 * 60 * 1000 ;
+    private static final long DEVIDE_DURATION = 3 * 60 * 1000 ;
 
     public static List<VoiceBean> devideByTimeTitle(List<EMMessage> messages, String chatingName, EMMessage lastMsg){
         List<VoiceBean> newMsgs = new ArrayList<>();

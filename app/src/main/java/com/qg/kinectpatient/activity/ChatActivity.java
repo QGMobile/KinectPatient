@@ -24,6 +24,7 @@ import com.qg.kinectpatient.emsdk.PlayTask;
 import com.qg.kinectpatient.emsdk.RecordTask;
 import com.qg.kinectpatient.emsdk.RecorderStateMachine;
 import com.qg.kinectpatient.model.ChatInfoBean;
+import com.qg.kinectpatient.model.DUser;
 import com.qg.kinectpatient.model.VoiceBean;
 import com.qg.kinectpatient.util.CommandUtil;
 import com.qg.kinectpatient.util.ToastUtil;
@@ -104,7 +105,12 @@ public class ChatActivity extends BaseActivity implements EMMessageListener, Cha
         mTopbar.setRightImage(true, R.drawable.person_info_selector, new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //jump to where
+                DUser dUser = curChatingBean.getDUser();
+                if(dUser != null){
+                    Intent intent = new Intent(ChatActivity.this, DoctorInfoActivity.class);
+                    intent.putExtra(EMConstants.EXTRA_DUSER, dUser);
+                    startActivity(intent);
+                }
             }
         });
 

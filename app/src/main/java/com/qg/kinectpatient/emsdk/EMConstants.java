@@ -23,5 +23,5 @@ public class EMConstants {
     public static final int VIEWTYPE_SOMEONE = 0x02;  //代表对方
     public static final int VIEWTYPE_ME = 0x03;       //代表自己
 
-
+    public static final String EXTRA_DUSER = "extraDUser";
 }
