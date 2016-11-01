@@ -8,6 +8,8 @@ import com.qg.kinectpatient.util.JsonUtil;
 
 import org.junit.Test;
 
+import java.util.Date;
+
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertNotNull;
 
@@ -23,6 +25,7 @@ public class HttpTest {
         user.setSex(1);
         user.setAge(100);
         user.setName("哈哈哈");
+        user.setBirth(new Date());
         UpdatePUserParam pUserParam = new UpdatePUserParam(user);
         UpdatePUserResult result = HttpProcess.sendHttp(pUserParam, UpdatePUserResult.class);
         System.out.println(JsonUtil.toJson(result));

@@ -1,7 +1,6 @@
 package com.qg.kinectpatient.http;
 
-import android.util.Log;
-
+//import android.util.Log;
 
 import com.qg.kinectpatient.param.Param;
 import com.qg.kinectpatient.result.Result;
@@ -10,6 +9,7 @@ import com.qg.kinectpatient.util.JsonUtil;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.ObjectInput;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -20,6 +20,12 @@ import java.net.URL;
  * Created by ZH_L on 2016/10/21.
  */
 public class HttpProcess {
+    static class Log {
+        static void d(Object... o) {
+        }
+        static void e(Object... o) {
+        }
+    }
     private static final String TAG = HttpProcess.class.getSimpleName();
     public static <P extends Param, R extends Result> R sendHttp(P param, Class<R> clazz){
         R result = null;
