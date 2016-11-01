@@ -28,6 +28,7 @@ public class PersonalInfoFragment extends BaseFragment implements PersonalInfoCo
 
     private TextView mInfo;
 
+    // Remove the parameter.
     public static PersonalInfoFragment newInstanceWithPresenter() {
         int patientId = 0;
         PersonalInfoFragment fragment = newInstance(patientId);
