@@ -8,10 +8,9 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import com.qg.kinectpatient.R;
-import com.qg.kinectpatient.fragment.ChatListFragment;
 import com.qg.kinectpatient.fragment.DoctorFragment;
 import com.qg.kinectpatient.fragment.ProfileFragment;
-import com.qg.kinectpatient.ui.information.PersonalInfoFragment;
+import com.qg.kinectpatient.fragment.MeFragment;
 
 /**
  * Created by 攀登者 on 2016/10/28.
@@ -20,8 +19,8 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
 
     private static final String TAG = "HomeActivity";
     private ProfileFragment mProfileFragment;
-    private ChatListFragment mDoctorFragment;
-    private PersonalInfoFragment mPersonalInfoFragment;
+    private DoctorFragment mDoctorFragment;
+    private MeFragment mMeFragment;
 
     private ImageButton profile, doctor, me;
 
@@ -94,7 +93,7 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
             case 1:
                 doctor.setImageResource(R.drawable.doctor_click);
                 if (mDoctorFragment == null) {
-                    mDoctorFragment = new ChatListFragment();
+                    mDoctorFragment = new DoctorFragment();
                     transaction.add(R.id.fragmentlayout, mDoctorFragment);
                 } else {
                     transaction.show(mDoctorFragment);
@@ -102,11 +101,11 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
                 break;
             case 2:
                 me.setImageResource(R.drawable.me_click);
-                if (mPersonalInfoFragment == null) {
-                    mPersonalInfoFragment = PersonalInfoFragment.newInstanceWithPresenter();
-                    transaction.add(R.id.fragmentlayout, mPersonalInfoFragment);
+                if (mMeFragment == null) {
+                    mMeFragment = new MeFragment();
+                    transaction.add(R.id.fragmentlayout, mMeFragment);
                 } else {
-                    transaction.show(mPersonalInfoFragment);
+                    transaction.show(mMeFragment);
                 }
                 break;
             default:
@@ -137,8 +136,8 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
         if (mDoctorFragment != null) {
             transaction.hide(mDoctorFragment);
         }
-        if (mPersonalInfoFragment != null) {
-            transaction.hide(mPersonalInfoFragment);
+        if (mMeFragment != null) {
+            transaction.hide(mMeFragment);
         }
     }
 
