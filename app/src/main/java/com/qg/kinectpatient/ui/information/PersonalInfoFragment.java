@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.qg.kinectpatient.R;
+import com.qg.kinectpatient.activity.App;
 import com.qg.kinectpatient.fragment.BaseFragment;
 import com.qg.kinectpatient.ui.information.base.BaseInfoActivity;
 
@@ -27,7 +28,9 @@ public class PersonalInfoFragment extends BaseFragment implements PersonalInfoCo
 
     private TextView mInfo;
 
-    public static PersonalInfoFragment newInstanceWithPresenter(int patientId) {
+    // Remove the parameter.
+    public static PersonalInfoFragment newInstanceWithPresenter() {
+        int patientId = 0;
         PersonalInfoFragment fragment = newInstance(patientId);
         new PersonalInfoPresenter(patientId, fragment);
         return fragment;
