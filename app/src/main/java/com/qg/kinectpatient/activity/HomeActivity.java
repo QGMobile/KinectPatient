@@ -45,27 +45,8 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
         setTabSelection(1);
         setTabSelection(2);
         setTabSelection(0);
-        updateTest();
     }
 
-    private void updateTest(){
-        Log.e(TAG, "updateTest");
-        PUser pUser = new PUser(18, "煌", 1, "12345678901", "123456", new Date(System.currentTimeMillis()));
-        UpdatePUserParam param = new UpdatePUserParam(pUser);
-        LogicImpl.getInstance().updatePUser(param, new LogicHandler<UpdatePUserResult>() {
-            @Override
-            public void onResult(UpdatePUserResult result, boolean onUIThread) {
-                if(onUIThread){
-                    if(result.isOk()){
-                        Log.e(TAG, "updatePUser success");
-                    }else{
-                        Log.e(TAG, "updatePUser fail");
-                        ToastUtil.showResultErrorToast(result);
-                    }
-                }
-            }
-        });
-    }
 
     private void initViews() {
         profile = (ImageButton) findViewById(R.id.profile);
