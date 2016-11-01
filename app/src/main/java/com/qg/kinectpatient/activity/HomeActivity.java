@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 
@@ -12,15 +11,7 @@ import com.qg.kinectpatient.R;
 import com.qg.kinectpatient.fragment.ChatListFragment;
 import com.qg.kinectpatient.fragment.DoctorFragment;
 import com.qg.kinectpatient.fragment.ProfileFragment;
-import com.qg.kinectpatient.logic.LogicHandler;
-import com.qg.kinectpatient.logic.LogicImpl;
-import com.qg.kinectpatient.model.PUser;
-import com.qg.kinectpatient.param.UpdatePUserParam;
-import com.qg.kinectpatient.result.UpdatePUserResult;
 import com.qg.kinectpatient.ui.information.PersonalInfoFragment;
-import com.qg.kinectpatient.util.ToastUtil;
-
-import java.util.Date;
 
 /**
  * Created by 攀登者 on 2016/10/28.
@@ -47,7 +38,6 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
         setTabSelection(0);
     }
 
-
     private void initViews() {
         profile = (ImageButton) findViewById(R.id.profile);
         doctor = (ImageButton) findViewById(R.id.doctor);
@@ -64,7 +54,6 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
     protected void onSaveInstanceState(Bundle outState) {
         // super.onSaveInstanceState(outState);
     }
-
 
     @Override
     public void onClick(View v) {

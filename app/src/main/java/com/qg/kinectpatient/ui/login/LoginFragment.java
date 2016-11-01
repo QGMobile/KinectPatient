@@ -1,6 +1,5 @@
 package com.qg.kinectpatient.ui.login;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.text.InputType;
@@ -12,7 +11,6 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 
 import com.qg.kinectpatient.R;
-import com.qg.kinectpatient.activity.HomeActivity;
 import com.qg.kinectpatient.fragment.BaseFragment;
 import com.qg.kinectpatient.model.PUser;
 import com.qg.kinectpatient.ui.information.PersonalInfoActivity;
@@ -125,10 +123,11 @@ public class LoginFragment extends BaseFragment implements LoginContract.View {
 
     @Override
     public void showMain(PUser pUser) {
-        Intent intent = new Intent(getContext(), HomeActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
-                | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intent);
+//        Intent intent = new Intent(getContext(), HomeActivity.class);
+//        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+//                | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//        startActivity(intent);
+        PersonalInfoActivity.start(getContext(), pUser.getId());
     }
 
     @Override

@@ -54,7 +54,6 @@ public class HttpProcess {
                 os = conn.getOutputStream();
                 os.write((json).getBytes());
                 os.flush();
-                Log.d(TAG, "sendParamToServer: " + conn.getResponseCode());
                 Log.d(TAG,"send->"+json);
                 br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
                 StringBuilder sb = new StringBuilder();
