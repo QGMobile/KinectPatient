@@ -24,4 +24,5 @@ public class EMConstants {
     public static final int VIEWTYPE_ME = 0x03;       //代表自己
 
     public static final String EXTRA_DUSER = "extraDUser";
+
 }
