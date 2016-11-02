@@ -149,7 +149,7 @@ public class ChatActivity extends BaseActivity implements EMMessageListener, Cha
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
-        if(hasFocus && isFirstCreated){
+        if(hasFocus && isFirstCreated && !mList.isEmpty()){
 //            mRecyclerView.smoothScrollToPosition(mList.size()-1);
             isFirstCreated = !isFirstCreated;
         }

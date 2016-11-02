@@ -8,6 +8,8 @@ import com.google.gson.GsonBuilder;
  */
 public class JsonUtil {
 
+    //date-format-->2016-10-30 07:22:47
+
     public static String toJson(Object obj){
         GsonBuilder builder = new GsonBuilder()
                 .setDateFormat("yyyy-MM-dd hh:mm:ss");
@@ -17,6 +19,7 @@ public class JsonUtil {
 
     public static <T> T toObj(String json, Class<T> clazz){
         GsonBuilder builder = new GsonBuilder();
+        builder.setDateFormat("yyyy-MM-dd hh:mm:ss");
         Gson gson = builder.create();
         return gson.fromJson(json, clazz);
     }
