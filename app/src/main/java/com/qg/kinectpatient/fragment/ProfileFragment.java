@@ -34,7 +34,7 @@ import java.util.ArrayList;
  */
 public class ProfileFragment extends BaseFragment implements View.OnClickListener {
 
-    private static final String TAG = "PatientFragment";
+    private static final String TAG = "ProfileFragment";
     private View view;
     private RecyclerView recyclerView;
     private ArrayList<MedicalRecord> medicalRecordList;
@@ -47,26 +47,9 @@ public class ProfileFragment extends BaseFragment implements View.OnClickListene
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_profile, container, false);
-        test();
-//        initUI();
-//        initData();
+        initUI();
+        initData();
         return view;
-    }
-
-    private void test() {
-        LoginParam param = new LoginParam("15521265445", "qgmobile");
-        LogicImpl.getInstance().login(param, new LogicHandler<LoginResult>() {
-            @Override
-            public void onResult(LoginResult result, boolean onUIThread) {
-                if (result.isOk() && onUIThread && result.status == 1) {
-                    App.getInstance().setUser(result.getPUser());
-                    initUI();
-                    initData();
-                } else if (!result.isOk() && onUIThread) {
-                    Toast.makeText(getActivity(), "登录失败", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
     }
 
     public void initData() {
